@@ -44,11 +44,9 @@ export default class Watch extends Component {
             {/* Header 1 should be the time that is called from state */}
                <h1>{this.state.time}</h1> 
                
-               <form onClick ={this.timer}>
-                <button id = "start">Start</button>
-                <button id= "pause">Pause</button>
-                <button id ="reset">Reset</button>
-               </form>
+                <button onClick ={this.timer} id = "start">Start</button>
+                <button onClick ={this.timer} id= "pause">Pause</button>
+                <button onClick ={this.timer} id ="reset">Reset</button>
             </div>
         );
     }
