@@ -10,8 +10,8 @@ export default class Watch extends Component {
         this.state ={
             time:0
         };
-
-        this.time =this.timer.bind(this);
+        //Before correct this, buttons were returning undefined
+        this.timer =this.timer.bind(this);
         this.startTimer =this.startTimer.bind(this);
     }
 
@@ -31,7 +31,7 @@ export default class Watch extends Component {
             }
         }
         startTimer(){
-            setInterval(this.setState({time: this.state.time + 1}), 1000);
+            setInterval(this.setState({ time: this.state.time + 1}), 1000);
         }
     
         //If statement above changes state of the buttons
@@ -43,6 +43,7 @@ export default class Watch extends Component {
             <div>
             {/* Header 1 should be the time that is called from state */}
                <h1>{this.state.time}</h1> 
+               
                <form onClick ={this.timer}>
                 <button id = "start">Start</button>
                 <button id= "pause">Pause</button>
