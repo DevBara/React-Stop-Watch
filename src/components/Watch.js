@@ -21,6 +21,8 @@ export default class Watch extends Component {
                 this.setState({clearId:id}); //To update State properly, use setState()
             } else if(buttonClicked === 'reset'){
                 this.setState(time:0) //once reset button is clicked, reset time to 0
+            } else if (buttonClicked === 'pause'){
+                clearInterval(this.state.time.clearId); //clearInterval JS method, stops the time
             }
         }
     }
