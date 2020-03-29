@@ -1,11 +1,20 @@
+body{
+  background-color: purple;
+}
+
 h1{
   text-align: center;
   font-size: 50px;
+  color:white;
 }
 
-
-button{
+#start, #pause, #reset{
+  background-color: white;
+  color: purple;
   font-size: 20px;
-  left: 250px;
-  margin: auto;
+  
 }
+
+/* could not figure out how to move the buttons to the center
+tried align-items, text-align */
+
