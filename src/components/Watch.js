@@ -11,27 +11,44 @@ export default class Watch extends Component {
             time:0
         };
 
+        this.time =this.timer.bind(this);
+        this.startTimer =this.startTimer.bind(this);
+    }
+
         timer(event){
+            event.preventDefault();
             //create variable event when buttons are clicked
-            const buttonClicked = event.target.id
+            const buttonClicked = event.target.id;
             //if statement that stats what each button does
             //to track time, use JS method setInterval()
             if(buttonClicked === 'start'){
-                let id = setInterval(this.startTimer ,1000) //1000 is in milliseconds = 1 second
+                let id = setInterval(this.startTimer ,1000); //1000 is in milliseconds = 1 second
                 this.setState({clearId:id}); //To update State properly, use setState()
             } else if(buttonClicked === 'reset'){
-                this.setState(time:0) //once reset button is clicked, reset time to 0
+                this.setState({time:0}); //once reset button is clicked, reset time to 0
             } else if (buttonClicked === 'pause'){
-                clearInterval(this.state.time.clearId); //clearInterval JS method, stops the time
+                clearInterval(this.state.clearId); //clearInterval JS method, stops the time
             }
         }
-    }
+        startTimer(){
+            setInterval(this.setState({time: this.state.time + 1}), 1000);
+        }
+    
+        //If statement above changes state of the buttons
+        //Doesnt start the timer
+        //Create a function that increases the time by 1 second
+
     render() {
         return (
             <div>
             {/* Header 1 should be the time that is called from state */}
                <h1>{this.state.time}</h1> 
+               <form onClick ={this.timer}>
+                <button id = "start">Start</button>
+                <button id= "pause">Pause</button>
+                <button id ="reset">Reset</button>
+               </form>
             </div>
-        )
+        );
     }
 }
