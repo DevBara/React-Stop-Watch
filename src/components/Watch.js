@@ -44,7 +44,7 @@ export default class Watch extends Component {
             {/* Header 1 should be the time that is called from state */}
                <h1>{this.state.time}</h1> 
                
-                <button onClick ={this.timer} id = "start">Start</button>
+                <button onClick ={this.timer} id ="start">Start</button>
                 <button onClick ={this.timer} id= "pause">Pause</button>
                 <button onClick ={this.timer} id ="reset">Reset</button>
             </div>
